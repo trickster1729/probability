@@ -1,0 +1,59 @@
+<head>
+<style>
+	input[type=text] {	padding:5px; border:2px solid #ccc; 
+						-webkit-border-radius: 5px;
+						border-radius: 5px;
+					}
+	input[type=text]:focus {border-color:#333; }
+
+	input[type=submit] {padding:5px 15px; background:#0000FF; border:0 none;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+	}
+	body {
+		background-color:#00FF00;
+	} 
+	h1 { color:#B22222;}
+	h3 { color:#191970;}
+	
+</style>
+</head>
+
+<h1 align="center">HEAD-TO-HEAD-PERFORMANCE</h1>
+<%= form_for :performance, url: performance_index_path do |f| %>
+<% if $performance1.errors.any? || $performance2.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize($performance1.errors.count+$performance2.errors.count, "error") %> illegal values
+	prohibits evaluation:</h2>
+    <ul>
+    <% $performance1.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+	<ul>
+    <% $performance2.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+    <p align="center">
+  
+     PLAYER-1     PLAYER-2
+  </p>
+  <p align="center">
+	<%= f.text_field :rating1%></td> <%= f.text_field :rating2 %></td>
+	
+   
+   </p>
+   <p align="center">
+	<%= f.text_field :volatility1 %></td> <%= f.text_field :volatility2 %></td>
+	
+   </p>
+  <p align="center">
+    <%= f.submit "GO" %>
+  </p>
+ <% end %>
+  
