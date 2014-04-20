@@ -1,5 +1,6 @@
 == README
-
+type tht url to acces the web page
+	localhost:3000/performance/new
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
